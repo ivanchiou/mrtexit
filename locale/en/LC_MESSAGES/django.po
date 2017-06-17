@@ -1,0 +1,235 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-16 20:53+0800\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+#: .\settings.py:125
+msgid "Traditional Chinese"
+msgstr "TW"
+
+#: .\settings.py:126
+msgid "English"
+msgstr "EN"
+
+#: .\templates\home\result.html:15 .\templates\home\result.html.py:16
+msgid "This is the title."
+msgstr "MRT EXIT"
+
+#: .\templates\home\result.html:18 .\templates\home\result.html.py:21
+#: .\templates\home\result.html:116
+msgid "Slogan Description"
+msgstr ""
+"Fast, Simple, Precise to find the best route from MRT EXIT to your "
+"destination"
+
+#: .\templates\home\result.html:82
+msgid "MAP"
+msgstr "MAP"
+
+#: .\templates\home\result.html:84 .\templates\home\result.html.py:107
+msgid "TAIPEI"
+msgstr "TAIPEI"
+
+#: .\templates\home\result.html:85 .\templates\home\result.html.py:108
+msgid "KAOHSIUNG"
+msgstr "KAOHSIUNG"
+
+#: .\templates\home\result.html:89
+msgid "LANGUAGE"
+msgstr "LANGUAGE"
+
+#: .\templates\home\result.html:115
+msgid "Welcome to MRT SEARCH"
+msgstr "Welcome to MRT EXIT"
+
+#: .\templates\home\result.html:122
+msgid "Input your address"
+msgstr "Please input your destination."
+
+#: .\templates\home\result.html:123
+msgid "search MRT Exit"
+msgstr "Submit to Search MRT EXIT"
+
+#: .\templates\home\result.html:139
+msgid "Loading..."
+msgstr "Searching MRT EXIT..."
+
+#: .\templates\home\result.html:151
+msgid "MRT Line"
+msgstr "MRT Line"
+
+#: .\templates\home\result.html:155
+msgid "Exit Name"
+msgstr "Station Name"
+
+#: .\templates\home\result.html:159
+msgid "Exit Number"
+msgstr "Exit Number"
+
+#: .\templates\home\result.html:163
+msgid "Distance from Exit to Your Destination"
+msgstr "Distance"
+
+#: .\templates\home\result.html:164
+msgid "m"
+msgstr "m"
+
+#: .\templates\home\result.html:167
+msgid "Walking Time"
+msgstr "Walking Time"
+
+#: .\templates\home\result.html:168
+msgid "s"
+msgstr "s"
+
+#: .\templates\home\result.html:175
+msgid "share as link"
+msgstr "Share the Map"
+
+#: .\templates\home\result.html:176
+msgid "go to website"
+msgstr "Go to MRT EXIT"
+
+#: .\templates\home\result.html:182
+msgid "Share URL"
+msgstr "Share URL"
+
+#: .\templates\home\result.html:188
+msgid "Embed Code"
+msgstr "Embed Code"
+
+#: .\templates\home\result.html:201
+msgid "MRTExit feature list"
+msgstr "MRT EXIT Feature List"
+
+#: .\templates\home\result.html:206
+msgid "Simple to use"
+msgstr "Simple to use"
+
+#: .\templates\home\result.html:208
+msgid ""
+"You don't have install other APP or something like malicious software. Just "
+"go to MRT Search to input your destination!"
+msgstr ""
+"You don't have install other APP or something like malicious software. Just "
+"go to MRT EXIT to input your destination!"
+
+#: .\templates\home\result.html:215
+msgid "Improve Google Map"
+msgstr "Improve <br/>Google Map"
+
+#: .\templates\home\result.html:217
+msgid ""
+"Forget to search your tour path from Google Map website. You can get your "
+"express routing via MRT Search!"
+msgstr ""
+"Improve the Google Map to guide you to your destination. You can get your "
+"express routing via MRT EXIT!"
+
+#: .\templates\home\result.html:224
+msgid "No Ask for Help"
+msgstr "Share to<br/>your friends"
+
+#: .\templates\home\result.html:226
+msgid ""
+"You will not ask for help anymore if you don't know which exit is close to "
+"your destination. Let MRT Search help you!"
+msgstr ""
+"If your friend need to know where to get close exit to his destination, you "
+"can use MRT EXIT to share map with your friend!"
+
+#: .\templates\home\result.html:254
+msgid "Go to the page top or bottom"
+msgstr "Go to the page top or bottom"
+
+ msgid "Please input your destination."
+ msgstr "Please input your destination."
+
+ msgid "distance"
+ msgstr "distance"
+
+ msgid "duration"
+ msgstr "duration"
+
+ msgid "share url copy complete"
+ msgstr "The share url has been copied to clipboard!"
+
+ msgid "copy share url manually"
+ msgstr "Copy to clipboard: Ctrl+C, Enter"
+
+ msgid "wenhu"
+ msgstr "Wenhu"
+
+ msgid "tamsui-xinyi"
+ msgstr "Tamsui-Xinyi"
+
+ msgid "songshan-xindian"
+ msgstr "Songshan-Xindian"
+
+ msgid "zhonghe-xinlu"
+ msgstr "Zhonghe-Xinlu"
+
+ msgid "bannan"
+ msgstr "Bannan"
+
+ msgid "kao-red-line"
+ msgstr "Gangshan South-Siaogang"
+
+ msgid "kao-orange-line"
+ msgstr "Sizihwan-Daliao"
+
+ msgid "where you want to go is"
+ msgstr "where you want to go is"
+
+ msgid "station"
+ msgstr "station"
+
+ msgid "number_exit"
+ msgstr " Exit"
+
+ msgid "min"
+ msgstr "m"
+
+ msgid "hour"
+ msgstr "h"
+
+ msgid "Map"
+ msgstr "Map"
+
+ msgid "Services"
+ msgstr "Services"
+
+ msgid "Contact"
+ msgstr "Contact"
+
+ msgid ""
+ "Your suggestion is to improve our approach to make MRT Search perfect."
+ msgstr ""
+ "Your suggestion is to improve our approach to make MRT EXIT perfect."
+
+#, fuzzy
+#~| msgid "Please input your destination."
+#~ msgid "Please input your destination"
+#~ msgstr "Please input your destination."
+
+ msgid "meter"
+ msgstr "meter"
+
+ msgid "second"
+ msgstr "second"
+
+ msgid "TOKYO"
+ msgstr "TOKYO"
+
+ msgid "Exit Info"
+ msgstr "Exit Info"
+
+ msgid "INPUT YOUR DESTINATION"
+ msgstr "INPUT YOUR DESTINATION"

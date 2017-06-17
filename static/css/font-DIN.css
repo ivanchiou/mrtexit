@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'DIN-Medium';
+  src: url('../fonts/DIN/DIN-Medium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DIN-Black';
+  src: url('../fonts/DIN/DIN-Black.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DIN-Bold';
+  src: url('../fonts/DIN/DIN-Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DIN-Light';
+  src: url('../fonts/DIN/DIN-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}

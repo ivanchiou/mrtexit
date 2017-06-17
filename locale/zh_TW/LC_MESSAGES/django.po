@@ -1,0 +1,235 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-16 20:53+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\settings.py:125
+msgid "Traditional Chinese"
+msgstr "中文"
+
+#: .\settings.py:126
+msgid "English"
+msgstr "英文"
+
+#: .\templates\home\result.html:15 .\templates\home\result.html.py:16
+msgid "This is the title."
+msgstr "MRT EXIT 捷近"
+
+#: .\templates\home\result.html:18 .\templates\home\result.html.py:21
+#: .\templates\home\result.html:116
+msgid "Slogan Description"
+msgstr "查詢捷運最近出口路線到目的地 快速、簡單、準確"
+
+#: .\templates\home\result.html:82
+msgid "MAP"
+msgstr "地圖"
+
+#: .\templates\home\result.html:84 .\templates\home\result.html.py:107
+msgid "TAIPEI"
+msgstr "台北"
+
+#: .\templates\home\result.html:85 .\templates\home\result.html.py:108
+msgid "KAOHSIUNG"
+msgstr "高雄"
+
+#: .\templates\home\result.html:89
+msgid "LANGUAGE"
+msgstr "語言"
+
+#: .\templates\home\result.html:115
+msgid "Welcome to MRT SEARCH"
+msgstr "歡迎查詢捷近"
+
+#: .\templates\home\result.html:122
+msgid "Input your address"
+msgstr "輸入地址 找尋捷近"
+
+#: .\templates\home\result.html:123
+msgid "search MRT Exit"
+msgstr "送出並開始找尋捷近"
+
+#: .\templates\home\result.html:139
+msgid "Loading..."
+msgstr "找尋捷近中..."
+
+#: .\templates\home\result.html:151
+msgid "MRT Line"
+msgstr "捷運線"
+
+#: .\templates\home\result.html:155
+msgid "Exit Name"
+msgstr "捷運站名稱"
+
+#: .\templates\home\result.html:159
+msgid "Exit Number"
+msgstr "出口號碼"
+
+#: .\templates\home\result.html:163
+msgid "Distance from Exit to Your Destination"
+msgstr "目的地距離"
+
+#: .\templates\home\result.html:164
+msgid "m"
+msgstr "公尺"
+
+#: .\templates\home\result.html:167
+msgid "Walking Time"
+msgstr "步行時間"
+
+#: .\templates\home\result.html:168
+msgid "s"
+msgstr "秒"
+
+#: .\templates\home\result.html:175
+msgid "share as link"
+msgstr "分享地圖"
+
+#: .\templates\home\result.html:176
+msgid "go to website"
+msgstr "前往捷近首頁"
+
+#: .\templates\home\result.html:182
+msgid "Share URL"
+msgstr "分享連結"
+
+#: .\templates\home\result.html:188
+msgid "Embed Code"
+msgstr "嵌入程式碼"
+
+#: .\templates\home\result.html:201
+msgid "MRTExit feature list"
+msgstr "<font face='DIN-Medium'>MRT EXIT</font>捷近特點"
+
+#: .\templates\home\result.html:206
+msgid "Simple to use"
+msgstr "簡稱搜尋<br/>快速方便"
+
+#: .\templates\home\result.html:208
+msgid ""
+"You don't have install other APP or something like malicious software. Just "
+"go to MRT Search to input your destination!"
+msgstr ""
+"您不需要下載捷運出口APP,只要來到MRT EXIT即可為您查詢離目的地最近的捷運出口!"
+
+#: .\templates\home\result.html:215
+msgid "Improve Google Map"
+msgstr "及時找到<br/>目的地"
+
+#: .\templates\home\result.html:217
+msgid ""
+"Forget to search your tour path from Google Map website. You can get your "
+"express routing via MRT Search!"
+msgstr ""
+"強化傳統Google地圖查詢, 不再困擾離哪個捷運站出口最近, 為您指引距離比較近的捷"
+"運出口到目的地!"
+
+#: .\templates\home\result.html:224
+msgid "No Ask for Help"
+msgstr "出口資訊<br/>便利分享"
+
+#: .\templates\home\result.html:226
+msgid ""
+"You will not ask for help anymore if you don't know which exit is close to "
+"your destination. Let MRT Search help you!"
+msgstr "和朋友相約, 不用再費心查詢幾號捷運出口最近, 一鍵分享捷運出口路線!"
+
+#: .\templates\home\result.html:254
+msgid "Go to the page top or bottom"
+msgstr "前往網站的最頂端或最下方"
+
+msgid "Please input your destination."
+msgstr "請輸入您要去的地址"
+
+msgid "distance"
+msgstr "距離"
+
+msgid "duration"
+msgstr "時間"
+
+msgid "share url copy complete"
+msgstr "分享的連結已經儲存到您的剪貼簿~"
+
+msgid "copy share url manually"
+msgstr "請使用Ctrl+C來複製分享的連結，結束後按下確認鍵"
+
+msgid "wenhu"
+msgstr "文湖"
+
+msgid "tamsui-xinyi"
+msgstr "淡水信義"
+
+msgid "songshan-xindian"
+msgstr "松山新店"
+
+msgid "zhonghe-xinlu"
+msgstr "中和新蘆"
+
+msgid "bannan"
+msgstr "板南"
+
+msgid "kao-red-line"
+msgstr "紅(南岡山—小港)"
+
+msgid "kao-orange-line"
+msgstr "橘(西子灣—大寮)"
+
+msgid "where you want to go is"
+msgstr "您要去的目的地是"
+
+msgid "station"
+msgstr "站"
+
+msgid "number_exit"
+msgstr "號出口"
+
+msgid "min"
+msgstr "分"
+
+msgid "hour"
+msgstr "時"
+
+msgid "Map"
+msgstr "地圖"
+
+msgid "Services"
+msgstr "服務介紹"
+
+msgid "Contact"
+msgstr "連絡方式"
+
+msgid ""
+"Your suggestion is to improve our approach to make MRT Search perfect."
+msgstr "您的意見是我們MRT EXIT進步的動力!"
+
+#, fuzzy
+#~| msgid "Please input your destination."
+#~ msgid "Please input your destination"
+#~ msgstr "請輸入您要去的地址"
+
+msgid "meter"
+msgstr "公尺"
+
+msgid "second"
+msgstr "秒"
+
+msgid "TOKYO"
+msgstr "東京"
+
+msgid "Exit Info"
+msgstr "出口資訊"
+
+msgid "INPUT YOUR DESTINATION"
+msgstr "輸入位置"

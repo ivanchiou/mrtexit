@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'msyh';
+  src: url('../fonts/msyh/msyh.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'msyhbd';
+  src: url('../fonts/msyh/msyhbd.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

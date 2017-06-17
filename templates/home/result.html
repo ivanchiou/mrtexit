@@ -1,0 +1,311 @@
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+		<!-- BASICS -->
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7;IE=edge,chrome=1">
+		<title>MRT EXIT 捷近</title>
+        {% load staticfiles %}
+        <meta property="og:title" content="{% trans 'This is the title.' %}" />
+		<meta property="og:site_name" content="{% trans 'This is the title.' %}" />
+		<meta property="og:image" content="http://i.imgur.com/vRL70xO.png" />
+		<meta property="og:description" content="{% trans 'Slogan Description' %}" />
+		<meta property="article:tag" content="捷運出口最近, 捷運出口app, 最近的捷運出口, 幾號出口最近, 出口查詢, 出口資訊, 捷運出口, 101最近出口, 捷運, MRT, EXIT" />
+		<meta name="keywords" content="捷運出口最近, 捷運出口app, 最近的捷運出口, 幾號出口最近, 出口查詢, 出口資訊, 捷運出口, 101最近出口, 捷運, MRT, EXIT" />
+		<meta name="description" content="{% trans 'Slogan Description' %}">
+		<META NAME='author' content='驚奇四超人' >
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+
+	
+		<link rel="shortcut icon" href="{% static "img/favorit-icon.png" %}" />
+		<link rel="stylesheet" type="text/css" href="{% static "css/isotope.css" %}" media="screen" />	
+		<link rel="stylesheet" href="{% static "js/fancybox/jquery.fancybox.css" %}" type="text/css" media="screen" />
+		<!-- bootsrap -->
+		<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}" />		
+		<link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+		<link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">
+		<!-- skin -->
+		<link rel="stylesheet" href="{% static "skin/default.css" %}">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> 
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+		<link rel="stylesheet" href="/static/css/{{ LANGUAGE_CODE }}_font.css">
+		<link rel="stylesheet" href="{% static "css/style.css" %}">
+		<link rel="stylesheet" href="{% static "css/custom.css" %}">
+
+		<script src="{% static "js/modernizr-2.6.2-respond-1.1.0.min.js" %}"></script>
+		<script src="{% static "js/jquery.js" %}"></script>
+		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/hot-sneaks/jquery-ui.css" rel="stylesheet">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+		<script src="{% static "js/jquery.easing.1.3.js" %}"></script>
+		<script src="{% static "js/bootstrap.min.js" %}"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{browser_key}}&libraries=places&sensor=false&language={{ LANGUAGE_CODE }}"></script>
+		<script src="{% static "js/jquery.isotope.min.js" %}"></script>
+		<script src="{% static "js/jquery.nicescroll.min.js" %}"></script>
+		<script src="{% static "js/fancybox/jquery.fancybox.pack.js" %}"></script>		
+		<script src="{% static "js/jquery.scrollTo-1.4.3.1-min.js" %}"></script>
+		<script src="{% static "js/jquery.localscroll-1.2.7-min.js" %}"></script>
+		<script src="{% static "js/stellar.js" %}"></script>
+		<script src="{% static "js/jquery.appear.js" %}"></script>
+		<script src="{% static "js/validate.js" %}"></script>
+		<script src="{% static "js/jquery.cookie.js" %}"></script>
+		<script type="text/javascript" src="{% url 'django.views.i18n.javascript_catalog' %}"></script>
+		<script type="text/javascript" src="{% static "js/history/native.history.js" %}"></script>
+	 	<script type="text/javascript" src="{% static "js/custom.js" %}"></script>
+		<script type="text/javascript" src="{% static "js/jquery.loadmodal.js" %}"></script>
+		<script type="text/javascript" src="//media.line.me/js/line-button.js?v=20140411" ></script>
+		<script>
+			var resovle_lat_lng = "{{resovle_lat_lng}}";
+			var targetaddr = "{{targetaddr}}";
+			var embed = "{{embed}}";
+			var csrf_token = "{{ csrf_token }}";
+			google.maps.event.addDomListener(window, 'load', function(){initialize(map_latlng, resovle_lat_lng, targetaddr, embed, csrf_token);});
+		</script>
+		<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+		<script>
+		  var googletag = googletag || {};
+		  googletag.cmd = googletag.cmd || [];
+		</script>
+    </head>
+	 
+    <body>
+    	<section id="header" class="appear"></section>
+    	<section id="section-search" class="featured">
+			<div id="navbar-container" class="container">
+			 <div class="navbar" role="navigation">
+	            <div class="navbar-header">
+					<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+						<input type="hidden" name="language" {% if LANGUAGE_CODE == 'en' %} value="zh-tw" {% elif LANGUAGE_CODE == 'zh-tw' %} value="en" {% endif %}/>
+						<button id="navbar-toggle-id-lang" type="submit" class="navbar-toggle navbar-toggle-right">
+							<!--<img class="flag_icon flag_icon_selected fa-toggle-phone-globe" onclick="$('#navbar-toggle-id-lang').click();" src="/static/img/country/{{ LANGUAGE_CODE }}.png" />-->
+							<img width="35" height="35" src="{% static "img/grid-world.svg" %}" alt="" class="fa-toggle-phone-globe" onclick="$('#navbar-toggle-id-lang').click();" />
+						</button>
+					</form>	
+					<button id="navbar-toggle-id" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
+						<span class="fa fa-bars fa-2x fa-toggle-menu"></span>
+					</button>
+	                <a id="navbar-brand-id" class="navbar-brand hidden-xs" href="{{ request.path }}" ><img src="{% static "img/MRT_01.png" %}" alt="" id="navbar-brand-img-id">
+					</a>
+	                <a id="navbar-brand-xs-id" class="navbar-brand navbar-brand-xs visible-xs" href="#" ><img width="134" height="23" src="{% static "img/MRTEXIT.svg" %}" alt="" id="navbar-brand-xs-img-id">
+					</a>					
+	            </div>
+				<div class="navbar-collapse collapse navbar-right">
+					<input name="next" type="hidden" value="{{ redirect_to }}" />
+					<ul class="nav navbar-nav navbar-center" data-0="margin-top:20px;" data-300="margin-top:5px;">					      
+					      <li class="dropdown"><a name="#map_select" class="dropdown-toggle" data-toggle="dropdown"><span class="top_right_icon_padding glyphicon glyphicon-map-marker fa-1x"></span>{% trans "MAP" %}</a>
+							<ul class="dropdown-menu">
+				  		  		<li><a href="http://web.metro.taipei/img/all/metrotaipeimap.jpg" target="_blank" name="#taipei" id="current">{% trans "TAIPEI" %}</a></li>
+					        	<li><a href="https://www.krtco.com.tw/images/newInnerSite/guide/KRTCRoute_map_Chinese.pdf" target="_blank" name="#kaoshiung">{% trans "KAOHSIUNG" %}</a></li>
+                            </ul>
+					      </li>
+					      <li><div class="vertical-line">|</div></li>
+						  <input type="hidden" id="current_language" value="{{ LANGUAGE_CODE }}"/>
+				  		  <li class="dropdown"><a name="#language_select" class="dropdown-toggle" data-toggle="dropdown"><span class="top_right_icon_padding glyphicon glyphicon-globe fa-1x"></span>{% trans "LANGUAGE" %}</a>
+                            <ul class="dropdown-menu">
+						        {% get_language_info_list for LANGUAGES as languages %}
+						        {% for language in languages %}
+						        	<li {% if language.code == LANGUAGE_CODE %} class="active" {% endif %}>
+						        		<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+							          		<input name="next" type="hidden" value="{{ redirect_to }}" />
+							          		<input type="hidden" name="language" value="{{ language.code }}"/>
+							          		<img class="flag_icon" onclick="$('#language_{{ language.code }}').click();" src="/static/img/country/{{ language.code }}.png" /><input id="language_{{ language.code }}" type="submit" class="btn btn-language" value="{% trans language.name %}"/>
+							          	</form>	
+						        	</li>
+						        {% endfor %}
+                            </ul>
+				  		  </li>
+				  	</ul>
+				</div>
+	            <div class="navbar-collapse collapse " id="bs-navbar-collapse-1"> <!-- show only on smart phone-->
+					<ul class="nav navbar-nav hidden-sm hidden-md hidden-lg toggle-menu-mobile" data-0="margin-top:20px;" data-300="margin-top:5px;">
+						<li><a href="http://web.metro.taipei/img/all/metrotaipeimap.jpg" target="_blank" name="#taipei" id="current">{% trans "TAIPEI" %}</a></li>
+					    <li><a href="https://www.krtco.com.tw/images/newInnerSite/guide/KRTCRoute_map_Chinese.pdf" target="_blank" name="#kaoshiung">{% trans "KAOHSIUNG" %}</a></li>
+					</ul>
+				</div>							
+			</div>		
+				<div class="row">
+					<div id="search_inner_div">
+						<div class="align-center">
+							<h2 class="slogan">{% trans 'Welcome to MRT SEARCH' %}</h2>
+							<h3 class="slogan_desc">{% trans 'Slogan Description' %}</h3>
+							<p>
+								<div class="well form-search" id="form-search-id">
+									<form action="/result/" id="post-form">
+										<div class="input-group">
+											{% csrf_token %}
+											<input type="text" name="targetaddr" class="form-control" id="targetaddr" placeholder="{% trans 'Input your address' %}" {% if targetaddr %} value="{{targetaddr}}" {% endif %}>
+											<div class="input-group-btn" title="{% trans 'search MRT Exit' %}">
+												<button id="submit-btn" type="submit" class="btn btn-success" disabled><span class="glyphicon glyphicon-search fa-2x"></span></button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</p>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--<div id="triangle" data-0="margin-top:20px;" data-300="margin-top:5px;"></div>-->
+		<div class="modal fade" id="loadingModal" tabindex="-1" role="dialog" aria-labelledby="loadingModalLabel" aria-hidden="true">
+			<div class="loadingWrapper">
+				<div class="content">
+					<h3>{% trans "Loading..." %}<i class="load"></i>
+					</h3>
+				</div>
+			</div>
+		</div>
+		
+		<!-- map -->
+		<section id="section-map" class="clearfix">
+			<!-- /78249813/MRTEXIT_首頁_970x250_上 -->
+			<div id='div-gpt-ad-1475826230305-1' class="div-center">
+				<script>
+					googletag.cmd.push(function() { googletag.display('div-gpt-ad-1475826230305-1'); });
+				</script>
+			</div>
+			<div id="info_section" style="display:none">
+				<!-- /78249813/MRTEXIT_搜尋完頁面_970x250_中 -->
+				<div id='div-gpt-ad-1476842084851-0' class="div-center">
+					<script>
+						googletag.cmd.push(function() { googletag.display('div-gpt-ad-1476842084851-0'); });
+					</script>
+				</div>
+				<table class="table table-hover">
+				    <tbody>
+				        <tr>
+				            <td class="td-col">{% trans "MRT Line" %}</td>
+				            <td id="track_value" class="td-value"></td>
+				        </tr>				    
+				        <tr>
+				            <td class="td-col">{% trans "Exit Name" %}</td>
+				            <td class="td-value"><b><font color="blue" id="closest_name">{{closest_name}}</font></b></td>
+				        </tr>
+				        <tr>
+				            <td class="td-col">{% trans "Exit Number" %}</td>
+				            <td class="td-value"><b><font color="blue" id="closest_number">{{closest_number}}</font></b></td>
+				        </tr>
+				        <tr>
+				            <td class="td-col">{% trans "Distance from Exit to Your Destination" %}</td>
+				            <td class="td-value"><b><font color="blue" id="w_dis_closest_lat_lng">{{w_dis_closest_lat_lng}}{% trans "m" %}</font></b></td>
+				        </tr>
+				      	<tr>
+				            <td class="td-col">{% trans "Walking Time" %}</td>
+				            <td class="td-value"><b><font color="blue" id="w_sec_closest_lat_lng">{{w_sec_closest_lat_lng}}{% trans "s" %}</font></b></td>
+				        </tr>  
+				    </tbody>
+				</table>
+			</div>
+			<div id="map-outer">
+				<div id="map"></div>
+				<div id="share-link"><a class="icoShare" title="{% trans 'share as link' %}"><img src="{% static "img/share.png" %}" ></a></div>
+				<div id="line-share-link">
+					<span>
+					<script type="text/javascript">
+						new media_line_me.LineButton({"pc":false,"lang":"zh-hant","type":"d"});
+					</script>
+					</span>
+				</div>
+				<div id="route-link" class="ico-route"><a id="ico-location-arrow-id" target="_blank" title="ico-location-arrow"><img src="{% static "img/navigation.png" %}" ></a></div> 
+				<div id="go-to-logo"><a id="icoGoToWebsite-id" class="icoGoToWebsite" target="_blank" title="{% trans 'go to website' %}"><img src="{% static "img/favorit-icon.png" %}" alt="{% trans 'go to website' %}"></a></div>  
+			</div><!-- /map-outer -->
+			<div id="gads-float-div" class="hidden-xs hidden-sm">
+				<div id="sf_popsticky" style="display:none;">
+					<!-- MRTEXIT_搜尋完頁面_160x600_右 -->
+					<ins class="adsbygoogle"
+						 style="display:inline-block;width:160px;height:600px"
+						 data-ad-client="ca-pub-9697959625780453"
+						 data-ad-slot="1425098523"></ins>
+				</div>
+			</div>
+			<script type="text/javascript" src="http://cdn2.sales-frontier.com/adtype/popsticky/sfpopsticky.js" id="sfpopsticky1" sf_top="20" sf_right="10" charset="UTF-8"></script>
+			<div id="share-info">	
+				<table class="table">
+				    <tbody>
+				        <tr id="share-url">
+				        	<td>{% trans "Share URL" %}</td>
+				        </tr>
+				        <tr>
+				        	<td><div class="input-group"><div class="input-group-btn"><button id="share-url-btn" type="submit" class="btn btn-share-url" ><span class="fa fa-clipboard"></span></button></div><input name="share-url-textbox" type="text" class="form-control" id="share-url-textbox" readonly="true" value="" /></div></td>
+				        </tr>
+				        <tr id="embed-code">
+				        	<td>{% trans "Embed Code" %}</td>
+				        </tr>
+				        <tr>	
+				        	<td><div class="input-group"><div class="input-group-btn"><button id="embed-code-btn" type="submit" class="btn btn-embed-code" ><span class="fa fa-clipboard"></span></button></div><input name="embed-code-textbox" type="text" class="form-control" id="embed-code-textbox" readonly="true" /></div></td>
+				        </tr>
+				    </tbody>
+				</table>
+			</div>
+		</section>
+
+		<!-- services -->
+		<section id="section-services" class="section pad-bot30 bg-white">
+		<div class="container container-service"> 
+			<h1 class="feature-title align-center">{% trans "MRTExit feature list" %}</h1>
+			<div class="row mar-bot124">
+				<div class="col-lg-4 align-center" >
+					<div id="image_container_1" class="align-center image_container" onmouseover="$('#intro_desc_1').css('visibility', 'visible');"  onmouseleave="$('#intro_desc_1').css('visibility', 'hidden');">
+						<img class="image_under_text" src="{% static "img/MRT_B1-1.png" %}" alt="">
+						<h4 class="text-bold text_on_image">{% trans "Simple to use" %}</h4>
+					</div>
+					<p id="intro_desc_1" class="desc_hidden">{% trans "You don't have install other APP or something like malicious software. Just go to MRT Search to input your destination!" %}
+					</p>					
+				</div>
+					
+				<div class="col-lg-4 align-center" >
+					<div id="image_container_2" class="align-center image_container" onmouseover="$('#intro_desc_2').css('visibility', 'visible');"  onmouseleave="$('#intro_desc_2').css('visibility', 'hidden');">
+						<img class="image_under_text" src="{% static "img/MRT_B2-1.png" %}" alt="">
+						<h4 class="text-bold text_on_image">{% trans "Improve Google Map" %}</h4>
+					</div>					
+					<p id="intro_desc_2" class="desc_hidden">{% trans "Forget to search your tour path from Google Map website. You can get your express routing via MRT Search!" %}
+					</p>					
+				</div>
+			
+				<div class="col-lg-4 align-center" >
+					<div id="image_container_3" class="align-center image_container" onmouseover="$('#intro_desc_3').css('visibility', 'visible');"  onmouseleave="$('#intro_desc_3').css('visibility', 'hidden');">
+						<img class="image_under_text" src="{% static "img/MRT_B3-1.png" %}" alt="">
+						<h4 class="text-bold text_on_image">{% trans "No Ask for Help" %}</h4>
+					</div>
+					<p id="intro_desc_3" class="desc_hidden">{% trans "You will not ask for help anymore if you don't know which exit is close to your destination. Let MRT Search help you!" %}
+					</p>					
+				</div>
+			
+			</div>	
+			<!-- /78249813/MRTEXIT_首頁_728x90_下 -->
+			<div id='div-gpt-ad-1475826230305-0' class="div-center">
+				<script>
+					googletag.cmd.push(function() { googletag.display('div-gpt-ad-1475826230305-0'); });
+				</script>
+			</div>
+		</div>
+		</section>
+	<section id="footer" class="section footer">
+		<div class="container">
+			<div class="row animated opacity mar-bot20 mar-bot170" data-andown="fadeIn" data-animation="animation">
+				<div class="col-sm-12 align-center">
+                    <ul class="social-network social-circle">
+                        <li><a id="icoFacebook-id" target="_blank" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a id="icoTwitter-id" target="_blank" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a id="icoGoogle-id" target="_blank" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a id="icoLinkedin-id" target="_blank" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="mailto:mrtexit@gmail.com?Subject=[MRT Exit]Feedback%20from%20web%20page" class="icoFeedback" title="Feedback"><i class="icon fa fa-envelope-o"></i></a></li>
+                    </ul>				
+				</div>
+			</div>
+
+			<div class="row align-center copyright">
+					<div class="col-sm-12"><p>Copyright &copy; 2015 MRT Exit - by <a href="#">驚奇四超人</a></p></div>
+			</div>
+		</div>
+
+	</section>
+	<a href="#header" class="scrollup" id="scrollup_icon" title="{% trans 'Go to the page top or bottom' %}" ><i id="scroll_fa_icon" class="fa fa-chevron-down"></i></a>
+	</body>
+</html>
